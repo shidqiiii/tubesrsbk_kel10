@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Show from './Show';
 import { Button } from "react-bootstrap";
 
-const App = () => {
+const Profile = () => {
 
     const [showTab, setShowTab] = useState(false);
 
@@ -21,4 +21,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default Profile;
