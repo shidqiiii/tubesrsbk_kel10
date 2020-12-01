@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Col, Container, Row, Card } from "react-bootstrap";
+import styled from 'styled-components';
+
+const Img = styled.img`
+object-fit: none;
+object-position: top;
+width: 18rem;
+height: 22rem;
+overflow: hidden;
+`
 
 export default class ListData extends Component {
     constructor(props) {
@@ -44,10 +53,10 @@ export default class ListData extends Component {
                                         <div key={results._id}>
                                             <Col>
                                                 <Card style={{ width: '18rem', margin: '10px' }}>
-                                                    <Card.Img variant="top" src={results.image} />
+                                                    <Img variant="top" src={results.image} />
                                                     <Card.Body>
                                                         <Card.Title>{results.name}</Card.Title>
-                                                        <Card.Text>{results.team}</Card.Text>
+                                                        <Card.Subtitle >{results.Team}</Card.Subtitle >
                                                     </Card.Body>
                                                 </Card>
                                             </Col>

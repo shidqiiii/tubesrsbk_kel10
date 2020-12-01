@@ -2,7 +2,7 @@ import React from 'react';
 import image1 from '../Component/Images/img1.jpg';
 import image2 from '../Component/Images/img2.jpg';
 import styled from 'styled-components';
-import { Col, Container, Row, Card } from "react-bootstrap";
+import { Container, Row, Card } from "react-bootstrap";
 
 const Img = styled.img`
  border: 2px;
