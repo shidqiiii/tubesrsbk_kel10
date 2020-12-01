@@ -7,7 +7,7 @@ export default class ListData extends Component {
 
         super(props);
         this.state = {
-            hero: [],
+            football: [],
             visible: false,
         };
     }
@@ -15,7 +15,7 @@ export default class ListData extends Component {
     componentDidMount() {
         axios({
             method: "get",
-            url: "https://akabab.github.io/superhero-api/api/all.json",
+            url: "https://footballapishidqi.herokuapp.com/api/posts/",
             headers: {
                 accept: "*/*",
             },
@@ -23,7 +23,7 @@ export default class ListData extends Component {
             .then((data) => {
                 console.log(data.data);
                 this.setState({
-                    hero: data.data,
+                    football: data.data,
                 });
             })
             .catch((error) => {
@@ -36,18 +36,18 @@ export default class ListData extends Component {
             <div className="App">
                 <div className="mt-3">
                     <center>
-                        <h1><strong>List Superhero</strong></h1>
+                        <h1><strong>The Best Player In the World</strong></h1>
                         <Container>
                             <Row className="justify-content-md-center">
-                                {this.state.hero.map((results, index) => {
+                                {this.state.football.map((results, index) => {
                                     return (
-                                        <div key={results.id}>
+                                        <div key={results._id}>
                                             <Col>
                                                 <Card style={{ width: '18rem', margin: '10px' }}>
-                                                    <Card.Img variant="top" src={results.images.lg} />
+                                                    <Card.Img variant="top" src={results.image} />
                                                     <Card.Body>
                                                         <Card.Title>{results.name}</Card.Title>
-                                                        <Card.Text>{results.work.occupation}</Card.Text>
+                                                        <Card.Text>{results.team}</Card.Text>
                                                     </Card.Body>
                                                 </Card>
                                             </Col>
