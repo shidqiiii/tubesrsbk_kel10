@@ -17,11 +17,11 @@ const NavbarComponent = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/Profile">Profile</Nav.Link>
+                        <Nav.Link href="/profile">Profile</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
                         <NavDropdown title="Login" id="basic-nav-dropdown" className="ml-auto">
-                            <NavDropdown.Item href="/">Admin</NavDropdown.Item>
+                            <NavDropdown.Item href="/admin">Admin</NavDropdown.Item>
                             <NavDropdown.Item href="/">Guest</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
