@@ -9,7 +9,7 @@ export default class AddData extends Component {
             football: [],
             visible: false,
             name: "",
-            team: "",
+            Team: "",
             image: "",
         };
     }
@@ -24,7 +24,7 @@ export default class AddData extends Component {
         this.setState({
             Team: e.target.value,
         });
-        console.log(this.state.team);
+        console.log(this.state.Team);
     };
     handleImage = (e) => {
         this.setState({
@@ -32,33 +32,41 @@ export default class AddData extends Component {
         });
         console.log(this.state.image);
     };
+
+    componentDidMount() {
+        console.log('test lur')
+    }
+
     handleSubmit = () => {
         if (
             this.state.name !== "" &&
-            this.state.team !== "" &&
+            this.state.Team !== "" &&
             !this.state.image !== ""
         ) {
             axios({
                 method: "post",
                 url: "https://footballapishidqi.herokuapp.com/api/posts/",
                 headers: {
+                    "Content-MD5": "application/json",
                     accept: "*/*",
                 },
                 data: {
                     name: this.state.name,
-                    team: this.state.team,
+                    Team: this.state.Team,
                     image: this.state.image,
                 },
             })
                 .then((data) => {
-                    alert("berhasil menambahkan");
+                    alert("Data berhasil ditambahkan");
                     window.location.reload();
+                    console.log(data)
                 })
                 .catch((error) => {
-                    alert("gagal lur");
+                    alert("Error");
+                    console.log(error)
                 });
         } else {
-            alert("pastikan semua kolom terisi");
+            alert("Data Gagal ditambahkan");
         }
     };
 
@@ -86,7 +94,7 @@ export default class AddData extends Component {
                             </Row>
                         </Form.Group>
                         <Row className="justify-content-md-center">
-                            <Button variant="primary" type="submit" onClick={this.handleSubmit}>Submit </Button>
+                            <Button variant="dark" value="kirim" onClick={this.handleSubmit}>Submit</Button>
                         </Row>
                     </Form>
                 </Container>

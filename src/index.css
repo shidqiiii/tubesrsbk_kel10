@@ -16,6 +16,8 @@ code {
   background-color: #121212;
 }
 
-.button{
-  background-color: #121212;
+.btn{
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #121212;
 }
