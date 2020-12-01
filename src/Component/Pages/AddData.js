@@ -7,7 +7,6 @@ export default class AddData extends Component {
         super(props);
         this.state = {
             football: [],
-            visible: false,
             name: "",
             Team: "",
             image: "",

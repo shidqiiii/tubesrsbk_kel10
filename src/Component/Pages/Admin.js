@@ -17,7 +17,6 @@ export default class Admin extends Component {
         super(props);
         this.state = {
             football: [],
-            visible: false,
         };
     }
 
