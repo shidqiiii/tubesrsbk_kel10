@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Show from './Show';
 import { Button } from "react-bootstrap";
 
@@ -10,6 +10,14 @@ const Profile = () => {
     const handleToggle = () => {
         setShowTab(preState => !preState);
     }
+
+    useEffect(() => {
+        if (showTab) {
+            console.log('Muncul');
+        } else {
+            console.log('Hilang');
+        }
+    }, [showTab]);
 
     return (
         <div className="App">
