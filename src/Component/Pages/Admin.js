@@ -86,7 +86,7 @@ export default class Admin extends Component {
                                         <td align="center">{results.Team}</td>
                                         <td align="center"><Img src={results.image} /></td>
                                         <td>
-                                            <Button variant="dark">Edit</Button>
+                                            <Button variant="dark" onClick={() => alert("Maaf fungsi belum tersedia")}>Edit</Button>
                                             <Button variant="danger" value="kirim" onClick={() => this.handleDelete(results._id)}>Delete</Button>
                                         </td>
                                     </tr>
